@@ -47,6 +47,19 @@
         </div>
       </div>
     </div>
+    <div class="right">
+      <div class="dashboard-nav">
+        <p>Dashboard</p>
+        <div class="search-bar"></div>
+      </div>
+      <div class="dashboard-body">
+        <div class="top">
+          <div class="card"></div>
+        </div>
+        <div class="middle"></div>
+        <div class="bottom"></div>
+      </div>
+    </div>
   </div>
 </template>
 
