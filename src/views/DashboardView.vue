@@ -54,9 +54,64 @@
       </div>
       <div class="dashboard-body">
         <div class="top">
-          <div class="card"></div>
+          <div class="card">
+            <div class="card-top">
+              <p>Total Loan Disbursed</p>
+              <img src="../assets/img/wallet.svg" alt="Total Loan Disbursed" />
+            </div>
+            <div class="card-bottom">
+              <p>₦510,000.50</p>
+              <div class="card-bottom-icon">
+                <p>+ 1%</p>
+                <img src="../assets/img/up-arrow.svg" alt="up" />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <p>Loan Products</p>
+              <img src="../assets/img/product.svg" alt="Total Loan Disbursed" />
+            </div>
+            <div class="card-bottom">
+              <p>20 Products</p>
+              <div class="card-bottom-icon">
+                <p>+ 0,7%</p>
+                <img src="../assets/img/up-arrow.svg" alt="up" />
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <p>Users</p>
+              <img src="../assets/img/users-icon.svg" alt="Total Loan Disbursed" />
+            </div>
+            <div class="card-bottom">
+              <p>15 people</p>
+              <div class="card-bottom-icon">
+                <p>- 1,7%</p>
+                <img src="../assets/img/down-arrow.svg" alt="up" />
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <p>Loan Vendors</p>
+              <img src="../assets/img/vendor.svg" alt="Total Loan Disbursed" />
+            </div>
+            <div class="card-bottom">
+              <p>10 vendors</p>
+              <div class="card-bottom-icon">
+                <p>+ 1%</p>
+                <img src="../assets/img/up-arrow.svg" alt="up" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="middle"></div>
+        <div class="middle">
+          <div class="chart"></div>
+          <div class="ratio"></div>
+        </div>
         <div class="bottom"></div>
       </div>
     </div>
@@ -69,45 +124,21 @@
   width: 100%;
   background-color: #e5e5e5;
   height: 100%;
+  display: flex;
   .left {
-    width: 20%;
+    width: 17.5%;
     background: #14142d;
-    border: 1px solid #ebebeb;
+    // border: 1px solid #ebebeb;
     height: 100%;
-
     .logo-wrapper {
-      padding: 25px 50px;
+      padding: 25px 20px;
     }
-    // .menu {
-    //   display: flex;
-    //   flex-direction: column;
-    //   grid-gap: 20px;
-    //   .menu-item {
-    //     display: flex;
-    //     align-items: center;
-    //     grid-gap: 10px;
-    //     padding: 20px 40px;
-    //     border-radius: 5px;
-    //     vertical-align: middle;
-    //     img {
-    //       width: 20px;
-    //       height: 20px;
-    //     }
-    //     p {
-    //       font-weight: 700;
-    //       font-size: 15px;
-    //       color: #fff;
-    //     }
-    //   }
-    //   .active {
-    //   }
-    // }
     .menu {
-      grid-gap: 10%;
+      grid-gap: 15%;
       .menu-item {
         display: flex;
         align-items: center;
-        padding: 17.5px 15%;
+        padding: 15px 10%;
         grid-gap: 10%;
         font-style: normal;
         font-weight: 700;
@@ -122,6 +153,9 @@
         grid-gap: 10%;
         p {
           padding-top: 5px;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 20px;
         }
       }
 
@@ -129,6 +163,52 @@
         background-color: #fff;
         color: #e41613;
         width: 90%;
+      }
+    }
+  }
+  .right {
+    width: 82.5%;
+
+    .dashboard-body {
+      width: 100%;
+
+      .top {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        grid-gap: 3%;
+        padding: 0 3%;
+        .card {
+          width: 100%;
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: #fdfdff;
+          border: 1px solid #ebebeb;
+          border-radius: 13px;
+          padding: 20px;
+          font-size: 14px;
+          line-height: 23px;
+          .card-top {
+            img {
+              width: 22px;
+            }
+          }
+          div {
+            display: flex;
+            justify-content: space-between;
+            .card-bottom-icon {
+              width: 30%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              img {
+                height: 12px;
+              }
+            }
+          }
+        }
       }
     }
   }
