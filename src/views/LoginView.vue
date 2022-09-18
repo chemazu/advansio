@@ -1,6 +1,18 @@
 <template>
   <div class="register">
-    <div class="register-card">
+    <div class="login-success">
+      <div class="ill-wrapper">
+        <img src="@/assets/img/Illustration.svg" alt="Thumb" />
+      </div>
+      <div class="img-wrapper">
+        <img src="@/assets/img/thumb.svg" alt="Thumb" />
+      </div>
+      <p>Your account successfully created.</p>
+      <div class="button-wrapper">
+        <ButtonComponent title="Go To Home" className="sec" />
+      </div>
+    </div>
+    <!-- <div class="register-card">
       <div class="heading">
         <h2 class="text-3xl font-bold">Log in</h2>
         <p>
@@ -39,7 +51,7 @@
           class="button-wrapper"
           v-if="regexEmail.test(email) && password.length > 8"
         >
-          <ButtonComponent title="Log in" className="pry" />
+          <ButtonComponent title="Log in" className="sec" />
         </div>
       </form>
       <div
@@ -48,13 +60,13 @@
       >
         <ButtonComponent title="Log In" className="disabled" />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
+import ButtonComponent from "@/components/ButtonComponent.vue";
 // import store from "@/store";
-import ButtonComponent from "../components/ButtonComponent.vue";
 export default {
   data() {
     return {
@@ -72,8 +84,8 @@ export default {
     //   };
     //   store.dispatch("handleLogin", user);
     // },
-    handleSubmit(){
-        console.log("first")
+    handleSubmit() {
+      console.log("first");
     },
     handleTogglePassword() {
       this.togglePassword = !this.togglePassword;
@@ -98,6 +110,57 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+  .login-success {
+    background: #ffffff;
+    border-radius: 10px;
+    width: 35%;
+    padding: 5% 2%;
+    padding-top:10% ;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .ill-wrapper{
+        position: absolute;
+        top: 25%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img{
+            width: 35%;
+
+        }
+
+    }
+    .img-wrapper {
+      background: rgba(96, 91, 255, 0.05);
+    //   background-image: url('../assets/img/Illustration.svg');
+      padding: 40px;
+      border-radius: 50%;
+      img {
+        width: 40px;
+        //   background: rgba(96,91,255,0.05);
+        // //   opacity: 0.05;
+        //   padding: 50px;
+        //   border-radius:50% ;
+        // //   width: 150px;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      /* identical to box height */
+
+      color: #000000;
+      padding: 5% 0;
+    }
+    .button-wrapper {
+      width: 100%;
+      padding: 5% 25%;
+    }
+  }
   .register-card {
     padding: 1.5% 2%;
     background: #fff;
@@ -220,5 +283,4 @@ export default {
     }
   }
 }
-
 </style>

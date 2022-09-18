@@ -661,6 +661,7 @@
 
                     outline: none;
                   }
+                  // -webkit-appearance:none;
                 }
               }
 
