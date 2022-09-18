@@ -143,9 +143,16 @@
                   </div>
                 </div>
               </div>
+              <div class="button-wrapper">
+          <ButtonComponent title="Cancel" className="pry"/>
+          <ButtonComponent title="Create Invoice" className="sec"/>
+
+        </div>
             </form>
+   
           </div>
         </div>
+
       </div>
       <!-- <div class="dashboard-body">
         <div class="top">
@@ -627,12 +634,13 @@
                 align-items: center;
                 select,
                 input {
+                  // overflow: visible;
                   border: 0;
                   padding: 2px 5px;
                   padding-left: 7.5px;
                   background: transparent;
                   width: 95%;
-                  height: 2rem;
+                  height: 1.8rem;
                   font-weight: 400;
                   font-size: 12px;
                   line-height: 16px;
@@ -664,6 +672,17 @@
               }
             }
           }
+          .button-wrapper{
+            display: flex;
+            justify-content: space-around;
+            padding: 0 20%;
+            padding-top:5% ;
+
+            button{
+              width: 40%;
+              padding:10px 15px ;
+            }
+          }
         }
       }
     }
@@ -685,6 +704,7 @@
 </style>
 
 <script>
+import ButtonComponent from '@/components/ButtonComponent.vue';
 // import Pie from "../components/PieChart.vue";
 // import LineChart from "../components/LineChart.vue";
 export default {
@@ -695,8 +715,7 @@ export default {
     };
   },
   components: {
-    // Pie,
-    // LineChart,
-  },
+    ButtonComponent
+},
 };
 </script>

@@ -24,7 +24,6 @@ button {
   border: 0px;
   min-width: 72px;
   min-width: fit-content;
-  font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
 .cancel {
@@ -37,8 +36,10 @@ button {
   color: #fff;
 }
 .pry {
-  background: #555658;
-  color: #fff;
+  background: #fff;
+  border: 1px solid #f5f5f5;
+
+  color: #e41613;
   &:hover {
     cursor: pointer;
   }
@@ -52,7 +53,9 @@ button {
   }
 }
 .sec {
-  background-color: transparent;
-  border: 1px solid #b7bcc3;
+  background-color: #e41613;
+  border: 1px solid #e41613;
+  color: #fff;
+
 }
 </style>
