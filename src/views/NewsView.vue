@@ -128,9 +128,13 @@
       </div>
     </div> -->
     <div class="news-card-wrapper">
-      <div v-for="(item, index) in dummy" v-bind:key="index" class="news-card">
+      <div
+        v-for="(item, index) in dummy.slice(firstIndex, lastIndex)"
+        v-bind:key="index"
+        class="news-card"
+      >
         <div class="content">
-          <h2>title</h2>
+          <h2>title{{ firstIndex }}{{ lastIndex }}</h2>
           <p>Date</p>
           <div class="hide">
             <p>Author</p>
@@ -141,7 +145,7 @@
     </div>
     <div class="pagination">
       <PaginationComponent
-        :totalPages="10"
+        :totalPages="numberOfPages"
         :perPage="perPage"
         :currentPage="currentPage"
         @pagechanged="onPageChange"
@@ -154,12 +158,13 @@
 <script>
 import { newsData } from "../utils/handleFetch";
 import PaginationComponent from "../components/PaginationComponent.vue";
+
 export default {
   data() {
     return {
       apiNewsData: null,
-      perPage: 10,
-      dummy: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      perPage: 3,
+      dummy: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       error: null,
       currentPage: 1,
     };
@@ -195,10 +200,27 @@ export default {
       }
     },
     onPageChange(page) {
-      console.log(page);
+      console.log(this.numberOfPages, page);
       this.currentPage = page;
     },
   },
+  computed: {
+    firstIndex: function () {
+      return (this.currentPage - 1) * this.perPage;
+    },
+    lastIndex: function () {
+      return this.firstIndex + this.perPage;
+    },
+    numberOfPages: function () {
+      let a = Math.floor(this.dummy.length / this.perPage);
+      if (this.dummy.length % this.perPage) {
+        return a + 1;
+      } else return a;
+    },
+  },
+  // const firstPageIndex = (currentPage - 1) * PageSize;
+  // const lastPageIndex = firstPageIndex + PageSize;
+
   components: { PaginationComponent },
 };
 </script>
