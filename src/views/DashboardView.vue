@@ -48,6 +48,8 @@
       </div>
     </div>
     <div class="right">
+      <PieChart/>
+      <LineComponent/>
       <div class="dashboard-nav">
         <div class="one">
           <p>Dashboard</p>
@@ -706,6 +708,9 @@
 
 <script>
 import ButtonComponent from '@/components/ButtonComponent.vue';
+import PieChart from '@/components/PieChart.vue';
+import LineComponent from '@/components/LineComponent.vue';
+// import LineChart from '@/components/LineChart.vue';
 // import Pie from "../components/PieChart.vue";
 // import LineChart from "../components/LineChart.vue";
 export default {
@@ -716,7 +721,9 @@ export default {
     };
   },
   components: {
-    ButtonComponent
+    ButtonComponent,
+    PieChart,
+    LineComponent
 },
 };
 </script>

@@ -1,8 +1,11 @@
 <template>
   <div class="news">
-    <div class="top-options">dsdds</div>
-
-    <!-- <div   v-if="apiNewsData" class="news-card-wrapper"> -->
+    <div class="top-options">
+      <div class="search-bar">
+        <input type="text" v-model="searchQuery" />
+        <ButtonComponent title="Search" />
+      </div>
+    </div>
 
     <!-- <div  v-for="(item, index) in apiNewsData" v-bind:key="index" class="news-card"> -->
     <!-- <div class="news-card-wrapper">
@@ -127,24 +130,26 @@
         </div>
       </div>
     </div> -->
-    <div class="news-card-wrapper">
+    <div v-if="apiNewsData" class="news-card-wrapper">
       <div
-        v-for="(item, index) in dummy.slice(firstIndex, lastIndex)"
+        v-for="(item, index) in apiNewsData.slice(firstIndex, lastIndex)"
         v-bind:key="index"
         class="news-card"
+        :style="{ backgroundImage: `url(${item.urlToImage})` }"
       >
         <div class="content">
-          <h2>title{{ firstIndex }}{{ lastIndex }}</h2>
+          <h2>{{ item.title }}</h2>
           <p>Date</p>
           <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
+            <p>{{ item.author }}</p>
+            <a :href="item.url">Read More..</a>
           </div>
         </div>
       </div>
     </div>
     <div class="pagination">
       <PaginationComponent
+        v-if="apiNewsData"
         :totalPages="numberOfPages"
         :perPage="perPage"
         :currentPage="currentPage"
@@ -158,15 +163,17 @@
 <script>
 import { newsData } from "../utils/handleFetch";
 import PaginationComponent from "../components/PaginationComponent.vue";
+import ButtonComponent from "@/components/ButtonComponent.vue";
 
 export default {
   data() {
     return {
       apiNewsData: null,
-      perPage: 3,
+      perPage: 21,
       dummy: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       error: null,
       currentPage: 1,
+      searchQuery: "apple",
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -212,8 +219,8 @@ export default {
       return this.firstIndex + this.perPage;
     },
     numberOfPages: function () {
-      let a = Math.floor(this.dummy.length / this.perPage);
-      if (this.dummy.length % this.perPage) {
+      let a = Math.floor(this.apiNewsData.length / this.perPage);
+      if (this.apiNewsData.length % this.perPage) {
         return a + 1;
       } else return a;
     },
@@ -221,13 +228,30 @@ export default {
   // const firstPageIndex = (currentPage - 1) * PageSize;
   // const lastPageIndex = firstPageIndex + PageSize;
 
-  components: { PaginationComponent },
+  components: { PaginationComponent, ButtonComponent },
 };
 </script>
 
 <style scoped lang="scss">
 .news {
   padding: 50px 5%;
+  .top-options {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .search-bar {
+      display: flex;
+      width: 50%;
+
+      input {
+        width: 80%;
+        padding: 0 5%;
+      }
+      button {
+        width: 20%;
+      }
+    }
+  }
   //   height: 100%;
   .news-card-wrapper {
     width: 100%;
@@ -242,7 +266,7 @@ export default {
     overflow: visible;
 
     .news-card {
-      background-image: url("../assets/img/news-sample.jpeg");
+      //   background-image: url("../assets/img/news-sample.jpeg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -279,6 +303,7 @@ export default {
         z-index: 30;
         h2 {
           color: #fff;
+          font-size: 14px;
         }
         .hide {
           display: none;
