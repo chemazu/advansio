@@ -48,14 +48,12 @@
       </div>
     </div>
     <div class="right">
-      <PieChart/>
-      <LineComponent/>
       <div class="dashboard-nav">
         <div class="one">
           <p>Dashboard</p>
           <div class="search-bar">
             <img src="@/assets/img/search.svg" alt="Search Bar" />
-            <input placeholder="search" v-bind="search" />
+            <input placeholder="Search" v-bind="search" />
           </div>
         </div>
         <div class="two">
@@ -76,87 +74,8 @@
           </div>
         </div>
       </div>
-      <div class="funds-transfer-wrapper">
-        <div class="funds-transfer">
-          <h2>Funds Transfer</h2>
-          <div class="img-wrapper">
-            <img
-              src="@/assets/img/fund-image.svg"
-              alt="user"
-              class="caret-down"
-            />
-          </div>
-          <div class="form-wrapper">
-            <form>
-              <div class="form-row">
-                <div class="form-item">
-                  <label>Select Account</label>
-                  <div class="select-wrapper">
-                    <select>
-                      <option selected="true" disabled="disabled">
-                        Select Account
-                      </option>
-                      <option>N1,000</option>
-                      <option>N10,000</option>
-                      <option>N100,000</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-item">
-                  <label>Amount</label>
-                  <div class="input-wrapper">
-                    <input placeholder="0.00" />
-                    <img src="@/assets/img/calendar.svg" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-item">
-                  <label>Account Number</label>
-                  <div class="input-wrapper">
-                    <input placeholder="Enter Account Number" />
-                  </div>
-                </div>
-                <div class="form-item">
-                  <label>Select Bank</label>
-                  <div class="select-wrapper">
-                    <select>
-                      <option selected="true" disabled="disabled">
-                        Select Recipient Bank
-                      </option>
-                      <option>Bank Option 1</option>
-                      <option>Bank Option 2</option>
-                      <option>Bank Option 3</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-item">
-                  <label>Account Name</label>
-                  <div class="input-wrapper">
-                    <input placeholder="Enter Account Name" />
-                  </div>
-                </div>
-                <div class="form-item">
-                  <label>VAT</label>
-                  <div class="input-wrapper">
-                    <input placeholder="Enter VAT" />
-                  </div>
-                </div>
-              </div>
-              <div class="button-wrapper">
-          <ButtonComponent title="Cancel" className="pry"/>
-          <ButtonComponent title="Create Invoice" className="sec"/>
 
-        </div>
-            </form>
-   
-          </div>
-        </div>
-
-      </div>
-      <!-- <div class="dashboard-body">
+      <div class="dashboard-body">
         <div class="top">
           <div class="card">
             <div class="card-top">
@@ -215,19 +134,42 @@
             </div>
           </div>
         </div>
- 
+
         <div class="middle">
-          <div class="chart">
-            <LineChart/>
-          </div>
-          <div class="pie">
-            <div class="pie-chart">
-              <Pie/>
+          <div class="chart-container">
+            <div class="heading">
+              <h3>Disbursement chart</h3>
+              <div class="other">
+                <p>January 2021 – December 2021</p>
+                <img
+                  src="@/assets/img/caret-down.svg"
+                  alt="user"
+                  class="caret-down"
+                />
+              </div>
             </div>
-            <div class="pie-legend"></div>
+            <LineComponent />
+          </div>
+          <div class="pie-container">
+            <div class="heading">
+              <h3>Loan Ratio</h3>
+            </div>
+            <div class="pie-chart-wrapper">
+              <PieChart />
+              <div class="legend">
+                <div class="one">
+                  <div class="key"></div>
+                  <p>Active</p>
+                </div>
+                <div class="two">
+                  <div class="key"></div>
+                  <p>Inactive</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-  
+
         <div class="bottom">
           <div class="bottom-card">
             <img src="@/assets/img/transfer.svg" alt="Transfer Funds" />
@@ -263,7 +205,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -276,6 +218,7 @@
   background-color: #e5e5e5;
   height: 100%;
   display: flex;
+  font-family: "Roboto", sans-serif;
   .left {
     width: 17.5%;
     background: #14142d;
@@ -411,6 +354,7 @@
 
     .dashboard-body {
       width: 100%;
+      padding: 25px 0;
       .top {
         display: flex;
         width: 100%;
@@ -419,14 +363,14 @@
         padding: 0 3%;
         .card {
           width: 100%;
-          height: 120px;
+          min-height: 100px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           background: #fdfdff;
           border: 1px solid #ebebeb;
-          border-radius: 13px;
-          padding: 20px;
+          border-radius: 8px;
+          padding: 15px 20px;
           font-size: 14px;
           line-height: 23px;
           .card-top {
@@ -441,6 +385,11 @@
             }
             img {
               width: 22px;
+            }
+          }
+          .card-bottom {
+            p {
+              color: #4f4f4f;
             }
           }
           div {
@@ -460,11 +409,121 @@
       }
       .middle {
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        // height: 400px;
+        grid-template-columns: 883fr 578fr;
+        height: 40%;
         // max-height: 400px;
-        padding: 25px 0;
+        // padding: 25px 0;
+        padding: 5% 3%;
+        grid-gap: 5%;
         box-sizing: border-box;
+        .chart-container {
+          background: #fdfdff;
+          /* stroke */
+          border: 1px solid #ebebeb;
+          border-radius: 13px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          .heading {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 25px 5%;
+            h3 {
+              font-family: "Roboto", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 18px;
+              display: flex;
+              align-items: center;
+            }
+            div {
+              display: flex;
+              p {
+                font-family: "Roboto", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                display: flex;
+                align-items: center;
+
+                /* text|dark */
+
+                color: #4f4f4f;
+              }
+              img {
+                width: 15px;
+                padding: 0 3px;
+              }
+            }
+          }
+        }
+        .pie-container {
+          background: linear-gradient(142.74deg, #ef3054 0%, #360b0b 75.19%);
+          border: 1px solid #ebebeb;
+          border-radius: 13px;
+          // display: flex;
+          // justify-content: center;
+          // align-items: center;
+          .heading {
+            padding-top: 25px;
+            padding-left: 5%;
+            h3 {
+              font-family: "Roboto", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 18px;
+              display: flex;
+              align-items: center;
+              color: #fff;
+            }
+          }
+          .pie-chart-wrapper {
+            // display: flex;
+            display: grid;
+            grid-template-columns: 4fr 2fr;
+            .legend {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              div {
+                padding: 5% 0;
+                display: flex;
+                align-items: center;
+
+                .key {
+                  width: 20px;
+                  height: 20px;
+
+                  background: #ffffff;
+                  border: 1px solid #ffffff;
+                  border-radius: 5px;
+                }
+                p {
+                  font-family: "Roboto", sans-serif;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 14px;
+                  line-height: 16px;
+                  display: flex;
+                  align-items: center;
+                  color: #fff;
+                  padding-left: 7.5%;
+                }
+              }
+              .two {
+                .key {
+                  background: #ff9737;
+                  border: 1px solid #ff9737;
+                }
+              }
+            }
+          }
+        }
       }
       .bottom {
         display: grid;
@@ -504,9 +563,10 @@
               color: #030229;
               font-style: normal;
               font-weight: 800;
-              font-size: 22px;
-              line-height: 30px;
+              font-size: 16px;
+              line-height: 22px;
               opacity: 0.7;
+              padding-bottom: 5%;
             }
           }
         }
@@ -525,8 +585,8 @@
             p {
               font-style: normal;
               font-weight: 700;
-              font-size: 18px;
-              line-height: 25px;
+              font-size: 16px;
+              line-height: 22px;
               color: #000000;
               opacity: 0.7;
             }
@@ -578,13 +638,15 @@
         }
       }
     }
- 
   }
 }
 .logo {
   background: #e41613;
   border-radius: 9px;
   padding: 7.5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   p {
     font-family: "Nunito Sans", sans-serif;
     font-style: normal;
@@ -597,9 +659,8 @@
 </style>
 
 <script>
-import ButtonComponent from '@/components/ButtonComponent.vue';
-import PieChart from '@/components/PieChart.vue';
-import LineComponent from '@/components/LineComponent.vue';
+import PieChart from "@/components/PieChart.vue";
+import LineComponent from "@/components/LineComponent.vue";
 // import LineChart from '@/components/LineChart.vue';
 // import Pie from "../components/PieChart.vue";
 // import LineChart from "../components/LineChart.vue";
@@ -611,9 +672,8 @@ export default {
     };
   },
   components: {
-    ButtonComponent,
     PieChart,
-    LineComponent
-},
+    LineComponent,
+  },
 };
 </script>

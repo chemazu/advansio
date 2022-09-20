@@ -1,6 +1,5 @@
 <template>
-  Pop
-  <v-chart class="chart" :option="option" />
+  <v-chart class="line-chart" :option="option" />
 </template>
 
 <script>
@@ -28,14 +27,28 @@ export default {
         },
         yAxis: {
           type: "value",
+          axisLabel: {
+            formatter: "{value}k",
+          },
+        },
+        grid: {
+          // show: true,
+          width: "85%",
+          top:"7.5%"
         },
         series: [
           {
-            data: [51, 160, 50, 300, 90, 150, 275,100],
+            data: [51, 160, 50, 300, 90, 150, 275, 100],
             type: "line",
-            smooth: true
+            smooth: true,
+            color: ["#e41613", "#9C90B5"],
+            symbol: "roundRect",
+   
           },
         ],
+        height: "75%",
+        // width: "85%",
+        padding: "0",
       },
     };
   },

@@ -40,7 +40,7 @@ export default {
           trigger: "item",
           formatter: "{a} <br/>{b} : {c} ({d}%)",
         },
- 
+
         // legend: {
         //   // right: "right",
 
@@ -53,7 +53,7 @@ export default {
           {
             name: "Traffic Sources",
             type: "pie",
-            radius: "25%",
+            radius: "70%",
             itemStyle: {
               normal: {
                 label: {
@@ -68,12 +68,17 @@ export default {
                 },
               },
             },
+            grid: {
+              // show: true,
+              width: "85%",
+              top: "5%",
+            },
             // center: ["50%", "60%"],
             data: [
               { value: 14, name: "Active" },
               { value: 86, name: "Inactive" },
             ],
-      
+
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -82,6 +87,7 @@ export default {
               },
             },
             color: ["#FF9737", "#FFf"],
+          
           },
         ],
       },
@@ -92,7 +98,9 @@ export default {
 
 <style scoped>
 .chart {
-  height: 400px;
+  height: 250px;
+  /* display: flex;
+  align-items: center; */
 }
 </style>
 
