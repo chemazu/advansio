@@ -60,7 +60,7 @@
         </div>
         <div class="two">
           <img
-            src="../assets/img/notification.svg"
+            src="../assets/img/notification.png"
             alt="Notification"
             class="notify-bell"
           />
@@ -328,7 +328,7 @@
       display: flex;
       width: 100%;
       justify-content: space-between;
-      padding: 25px 4%;
+      padding: 15px 4%;
       align-items: center;
 
       background: #fdfdff;
@@ -341,7 +341,8 @@
       .two {
         display: flex;
         justify-content: space-between;
-        width: 30%;
+        width: 25%;
+        align-items: center;
       }
       p {
         font-style: normal;
@@ -383,11 +384,12 @@
       }
       .notify-bell {
         width: 22px;
+        height: 22px;
       }
       .user-details {
         display: flex;
         align-items: center;
-        width: 55%;
+        width: 65%;
         justify-content: space-between;
         p {
           font-weight: 500;
@@ -576,119 +578,7 @@
         }
       }
     }
-    .funds-transfer-wrapper {
-      width: 100%;
-      padding: 2.5%;
-      padding-bottom: 0;
-      height: calc(100% - 86px);
-
-      .funds-transfer {
-        padding: 2% 5%;
-        height: 100%;
-        background-color: #fff;
-
-        h2 {
-          text-align: left;
-        }
-      }
-      .img-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 5% 0;
-        img {
-          width: 10%;
-        }
-      }
-      .form-wrapper {
-        width: 100%;
-        height: 60%;
-        form {
-          width: 100%;
-          display: grid;
-          height: 100%;
-          .form-row {
-            display: grid;
-            width: 100%;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 5%;
-            height: 20%;
-            .form-item {
-              width: 100%;
-
-              label {
-                font-weight: 600;
-                font-size: 14px;
-                line-height: 18px;
-
-                /* Text */
-
-                color: #030229;
-              }
-              .input-wrapper,
-              .select-wrapper {
-                width: 100%;
-                background: #fafafb;
-                border-radius: 8px;
-                padding: 7.5px 5px;
-                margin: 5px 0;
-                display: flex;
-                align-items: center;
-                select,
-                input {
-                  // overflow: visible;
-                  border: 0;
-                  padding: 2px 5px;
-                  padding-left: 7.5px;
-                  background: transparent;
-                  width: 95%;
-                  height: 1.8rem;
-                  font-weight: 400;
-                  font-size: 12px;
-                  line-height: 16px;
-                  color: #030229;
-                  opacity: 0.7;
-                  &::placeholder {
-                    font-weight: 400;
-                  font-size: 12px;
-                  line-height: 16px;
-                    color: #030229;
-                    opacity: 0.7;
-
-                  }
-                  &:focus {
-                    border: 0;
-                    background: transparent;
-                    // color: #030229;
-
-                    outline: none;
-                  }
-                  // -webkit-appearance:none;
-                }
-              }
-
-              .input-wrapper {
-                padding-right: 7%;
-                img {
-                  height: 1.5rem;
-                }
-              }
-            }
-          }
-          .button-wrapper{
-            display: flex;
-            justify-content: space-around;
-            padding: 0 20%;
-            padding-top:5% ;
-
-            button{
-              width: 40%;
-              padding:10px 15px ;
-            }
-          }
-        }
-      }
-    }
+ 
   }
 }
 .logo {
