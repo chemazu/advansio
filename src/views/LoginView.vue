@@ -90,6 +90,7 @@ export default {
     },
     handleSubmit() {
       this.toggleLogin = !this.toggleLogin;
+      localStorage.setItem("accessToken", "randomstringofdata");
     },
     handleTogglePassword() {
       this.togglePassword = !this.togglePassword;

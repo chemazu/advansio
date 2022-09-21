@@ -58,5 +58,12 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-// router.beforeEach.
+
+router.beforeEach((to) => {
+  if (to.fullPath === "/dashboard") {
+    if (localStorage.getItem("accessToken") === null) {
+      return "/login"
+    }
+  }
+});
 export default router;
