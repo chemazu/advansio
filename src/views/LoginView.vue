@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <div class="login-success">
+    <div v-if="toggleLogin" class="login-success">
       <div class="ill-wrapper">
         <img src="@/assets/img/Illustration.svg" alt="Thumb" />
       </div>
@@ -9,10 +9,10 @@
       </div>
       <p>Your account successfully created.</p>
       <div class="button-wrapper">
-        <ButtonComponent title="Go To Home" className="sec" />
+        <ButtonComponent title="Go To Home" className="sec" :onclick="goHome" />
       </div>
     </div>
-    <!-- <div class="register-card">
+    <div v-if="!toggleLogin" class="register-card">
       <div class="heading">
         <h2 class="text-3xl font-bold">Log in</h2>
         <p>
@@ -60,7 +60,7 @@
       >
         <ButtonComponent title="Log In" className="disabled" />
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -73,6 +73,7 @@ export default {
       email: "",
       password: "",
       togglePassword: true,
+      toggleLogin: false,
       regexEmail: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
     };
   },
@@ -84,8 +85,11 @@ export default {
     //   };
     //   store.dispatch("handleLogin", user);
     // },
+    goHome() {
+      this.$router.push("/dashboard");
+    },
     handleSubmit() {
-      console.log("first");
+      this.toggleLogin = !this.toggleLogin;
     },
     handleTogglePassword() {
       this.togglePassword = !this.togglePassword;
@@ -115,26 +119,24 @@ export default {
     border-radius: 10px;
     width: 35%;
     padding: 5% 2%;
-    padding-top:10% ;
+    padding-top: 10%;
     align-items: center;
     display: flex;
     flex-direction: column;
     position: relative;
-    .ill-wrapper{
-        position: absolute;
-        top: 25%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        img{
-            width: 35%;
-
-        }
-
+    .ill-wrapper {
+      position: absolute;
+      top: 25%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 35%;
+      }
     }
     .img-wrapper {
       background: rgba(96, 91, 255, 0.05);
-    //   background-image: url('../assets/img/Illustration.svg');
+      //   background-image: url('../assets/img/Illustration.svg');
       padding: 40px;
       border-radius: 50%;
       img {
@@ -233,14 +235,15 @@ export default {
           width: 100%;
           display: flex;
           align-items: center;
+          padding: 0 1%;
           input {
-            width: 97%;
+            width: 93%;
             border: 0;
             display: flex;
           }
           p {
             background: url("../assets/img/Inside.svg") no-repeat center center;
-            width: 4%;
+            width: 5%;
             padding: 0 1px;
             height: 100%;
             color: transparent;
@@ -280,6 +283,16 @@ export default {
     .button-wrapper {
       padding: 10px 0;
       width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .register {
+    .register-card {
+      width: 90%;
+    }
+    .login-success {
+      width: 90%;
     }
   }
 }
