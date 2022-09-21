@@ -478,7 +478,7 @@
                 grid-template-columns: 1fr;
               }
               .button-wrapper{
-                padding: 0 10%;
+                padding:  10%;
               }
             }
           }

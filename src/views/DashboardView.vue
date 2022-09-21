@@ -173,7 +173,7 @@
         </div>
 
         <div class="bottom">
-          <div class="bottom-card">
+          <div class="bottom-card" :onclick="goFund">
             <img src="@/assets/img/transfer.svg" alt="Transfer Funds" />
             <div class="content">
               <h3>Transfer Funds</h3>
@@ -345,8 +345,8 @@
           text-align: right;
           color: #4f4f4f;
         }
-    
-        .img-wrapper{
+
+        .img-wrapper {
           display: flex;
           align-items: center;
         }
@@ -357,7 +357,6 @@
           width: 15px;
           padding-left: 7.5px;
         }
-       
       }
     }
 
@@ -563,6 +562,9 @@
           font-size: 14px;
           line-height: 23px;
           height: 100%;
+          &:hover {
+            cursor: pointer;
+          }
           img {
             width: 75px;
           }
@@ -711,7 +713,7 @@
           padding: 3%;
 
           padding-bottom: 12%;
-          .bottom-card .content{
+          .bottom-card .content {
             width: 65%;
           }
         }
@@ -733,6 +735,11 @@ export default {
     return {
       search: "",
     };
+  },
+  methods: {
+    goFund() {
+      this.$router.push("/fund");
+    },
   },
   components: {
     PieChart,
