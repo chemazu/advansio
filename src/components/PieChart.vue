@@ -51,7 +51,7 @@ export default {
 
         series: [
           {
-            name: "Traffic Sources",
+            name: "Loan Ratio",
             type: "pie",
             radius: "70%",
             itemStyle: {

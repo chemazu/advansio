@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### ROUTES
+#### /login Login user
+#### /dashboard dashboard page 
+#### /fund Transfer fund 
+#### / Login Page 
+
