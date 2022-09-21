@@ -3,133 +3,9 @@
     <div class="top-options">
       <div class="search-bar">
         <input type="text" v-model="searchQuery" />
-        <ButtonComponent title="Search" />
+        <ButtonComponent title="Search" :onclick="handleSubmit" />
       </div>
     </div>
-
-    <!-- <div  v-for="(item, index) in apiNewsData" v-bind:key="index" class="news-card"> -->
-    <!-- <div class="news-card-wrapper">
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="content">
-          <h2>title</h2>
-          <p>Date</p>
-          <div class="hide">
-            <p>Author</p>
-            <p>Read More..</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div v-if="apiNewsData" class="news-card-wrapper">
       <div
         v-for="(item, index) in apiNewsData.slice(firstIndex, lastIndex)"
@@ -164,6 +40,7 @@
 import { newsData } from "../utils/handleFetch";
 import PaginationComponent from "../components/PaginationComponent.vue";
 import ButtonComponent from "@/components/ButtonComponent.vue";
+import axios from "axios";
 
 export default {
   data() {
@@ -194,11 +71,21 @@ export default {
       });
   },
   methods: {
-    fetchData() {
-      newsData().then((res) => {
-        console.log(res);
-      });
+    handleSubmit() {
+      axios
+        .get(
+          `https://newsapi.org/v2/everything?q=${this.searchQuery}&apiKey=c1503ffc1c2141f3bddc93fd127e4731`
+        )
+        .then((res) => {
+          this.apiNewsData = res.data.articles;
+        });
+      console.log("stuff");
     },
+    // fetchData() {
+    //   newsData().then((res) => {
+    //     console.log(res);
+    //   });
+    // },
     setData({ error, data }) {
       if (error) {
         this.error = error;
