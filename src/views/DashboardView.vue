@@ -53,7 +53,7 @@
           <p>Dashboard</p>
           <div class="search-bar">
             <img src="@/assets/img/search.svg" alt="Search Bar" />
-            <input placeholder="Search" v-bind="search" />
+            <input placeholder="search" v-bind="search" />
           </div>
         </div>
         <div class="two">
@@ -65,12 +65,14 @@
 
           <div class="user-details">
             <p>Venty Loans</p>
-            <img src="@/assets/img/name.svg" alt="user" />
-            <img
-              src="@/assets/img/caret-down.svg"
-              alt="user"
-              class="caret-down"
-            />
+            <div class="img-wrapper">
+              <img src="@/assets/img/name.svg" alt="user" />
+              <img
+                src="@/assets/img/caret-down.svg"
+                alt="user"
+                class="caret-down"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -343,12 +345,19 @@
           text-align: right;
           color: #4f4f4f;
         }
+    
+        .img-wrapper{
+          display: flex;
+          align-items: center;
+        }
         img {
-          width: 42px;
+          width: 40px;
         }
         .caret-down {
-          width: 12px;
+          width: 15px;
+          padding-left: 7.5px;
         }
+       
       }
     }
 
@@ -410,7 +419,7 @@
       .middle {
         display: grid;
         grid-template-columns: 883fr 578fr;
-        height: 40%;
+        // height: 40%;
         // max-height: 400px;
         // padding: 25px 0;
         padding: 5% 3%;
@@ -654,6 +663,60 @@
     font-size: 30px;
     line-height: 41px;
     color: #fff;
+  }
+}
+@media screen and (max-width: 480px) {
+  .dashboard {
+    .left {
+      display: none;
+    }
+    .right {
+      width: 100%;
+      .dashboard-nav {
+        .one {
+          width: 20%;
+        }
+        .search-bar {
+          display: none;
+        }
+        .two {
+          width: 50%;
+
+          .user-details {
+            .img-wrapper {
+              display: none;
+            }
+          }
+        }
+      }
+      .dashboard-body {
+        background-color: #e5e5e5;
+        height: 100%;
+        bottom: 0;
+        padding: 0;
+        // position: absolute;
+        overflow: scroll;
+        .top {
+          flex-direction: column;
+          .card {
+            margin: 2.5% 0;
+            div .card-bottom-icon {
+              width: 15%;
+            }
+          }
+        }
+        .middle,
+        .bottom {
+          grid-template-columns: 1fr;
+          padding: 3%;
+
+          padding-bottom: 12%;
+          .bottom-card .content{
+            width: 65%;
+          }
+        }
+      }
+    }
   }
 }
 </style>

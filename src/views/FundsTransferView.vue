@@ -297,6 +297,8 @@
         }
         .img-wrapper {
           display: flex;
+          align-items: center;
+
         }
         img {
           width: 40px;

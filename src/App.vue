@@ -8,7 +8,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
-  overflow: visible;
+  /* overflow: visible; */
 }
 #app {
   -webkit-font-smoothing: antialiased;

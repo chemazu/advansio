@@ -34,7 +34,7 @@ export default {
         grid: {
           // show: true,
           width: "85%",
-          top:"7.5%"
+          top: "7.5%",
         },
         series: [
           {
@@ -43,7 +43,6 @@ export default {
             smooth: true,
             color: ["#e41613", "#9C90B5"],
             symbol: "roundRect",
-   
           },
         ],
         height: "75%",
@@ -55,4 +54,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@media screen and (max-width: 480px) {
+  .line-chart {
+    height: 250px;
+    width: 100%;
+    /* display: flex;
+align-items: center; */
+  }
+}
+</style>
