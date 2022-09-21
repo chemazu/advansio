@@ -15,7 +15,7 @@
       >
         <div class="content">
           <h2>{{ item.title }}</h2>
-          <p>Date</p>
+          <p>{{ dateFormatter(item.publishedAt) }}</p>
           <div class="hide">
             <p>{{ item.author }}</p>
             <a :href="item.url">Read More..</a>
@@ -40,6 +40,7 @@
 import { newsData } from "../utils/handleFetch";
 import PaginationComponent from "../components/PaginationComponent.vue";
 import ButtonComponent from "@/components/ButtonComponent.vue";
+// import dateFormatter from "@/utils/handleDate";
 import axios from "axios";
 
 export default {
@@ -71,6 +72,10 @@ export default {
       });
   },
   methods: {
+    dateFormatter(item) {
+      let d = new Date(item);
+      return `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
+    },
     handleSubmit() {
       axios
         .get(
@@ -181,6 +186,7 @@ export default {
           );
         z-index: 0;
         &:hover {
+          
         }
       }
       .content {
@@ -192,14 +198,25 @@ export default {
           color: #fff;
           font-size: 14px;
         }
+        p {
+          color: #fff;
+          font-size: 14px;
+
+        }
         .hide {
           display: none;
-          color: blue;
           width: 70%;
           justify-content: space-between;
           padding: 5px 0;
           font-size: 14px;
+          p {
+            color: #42b983;
+          }
+          a {
+            color: #2c3e50;
+          }
         }
+
         &:hover {
           height: 50%;
           .hide {

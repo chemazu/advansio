@@ -50,7 +50,8 @@
     <div class="right">
       <div class="dashboard-nav">
         <div class="one">
-          <p>Dashboard</p>
+          <p><router-link to="/dashboard">Dashboard</router-link></p>
+
           <div class="search-bar">
             <img src="@/assets/img/search.svg" alt="Search Bar" />
             <input placeholder="search" v-bind="search" />
@@ -201,7 +202,7 @@
           font-size: 15px;
           line-height: 20px;
         }
-        &:hover{
+        &:hover {
           cursor: pointer;
         }
       }
@@ -298,7 +299,6 @@
         .img-wrapper {
           display: flex;
           align-items: center;
-
         }
         img {
           width: 40px;
@@ -451,7 +451,7 @@
         .one {
           width: 20%;
         }
-        .search-bar{
+        .search-bar {
           display: none;
         }
         .two {
@@ -464,21 +464,21 @@
           }
         }
       }
-      .funds-transfer-wrapper{
-        .funds-transfer{
-          .img-wrapper{
+      .funds-transfer-wrapper {
+        .funds-transfer {
+          .img-wrapper {
             // padding: 0;
-            img{
+            img {
               width: 100px;
             }
           }
-          .form-wrapper{
-            form{
-              .form-row{
+          .form-wrapper {
+            form {
+              .form-row {
                 grid-template-columns: 1fr;
               }
-              .button-wrapper{
-                padding:  10%;
+              .button-wrapper {
+                padding: 10%;
               }
             }
           }

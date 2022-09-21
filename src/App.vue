@@ -15,19 +15,19 @@
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   /* overflow: hidden; */
-
 }
 
 nav {
   padding: 30px;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+a{
+  text-decoration: none;
+  color:inherit;
 }
+ 
 
-nav a.router-link-exact-active {
-  color: #42b983;
+a.router-link-exact-active {
+  color: #2c3e50;
+
 }
 </style>

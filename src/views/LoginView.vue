@@ -16,8 +16,7 @@
       <div class="heading">
         <h2 class="text-3xl font-bold">Log in</h2>
         <p>
-          If you have no account,
-          <router-link to="/">Sign Up</router-link>
+          If you have no account,read <router-link to="/news">News</router-link>
         </p>
       </div>
       <form @submit.prevent="handleSubmit">
@@ -56,7 +55,7 @@
       </form>
       <div
         class="button-wrapper"
-        v-if="!regexEmail.test(email) || password.length < 8"
+        v-if="!regexEmail.test(email) || password.length <= 8"
       >
         <ButtonComponent title="Log In" className="disabled" />
       </div>

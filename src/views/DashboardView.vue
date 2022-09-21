@@ -50,7 +50,8 @@
     <div class="right">
       <div class="dashboard-nav">
         <div class="one">
-          <p>Dashboard</p>
+          <p><router-link to="/dashboard">Dashboard</router-link></p>
+
           <div class="search-bar">
             <img src="@/assets/img/search.svg" alt="Search Bar" />
             <input placeholder="search" v-bind="search" />
