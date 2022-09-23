@@ -406,7 +406,7 @@
             display: flex;
             justify-content: space-between;
             .card-bottom-icon {
-              width: 30%;
+              width: 35%;
               display: flex;
               justify-content: space-between;
               align-items: center;
