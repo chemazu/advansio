@@ -219,14 +219,14 @@
 .dashboard {
   width: 100%;
   background-color: #e5e5e5;
-  height: 100%;
+  // height: 100%;
   display: flex;
   font-family: "Roboto", sans-serif;
   .left {
     width: 17.5%;
     background: #14142d;
     // border: 1px solid #ebebeb;
-    height: 100%;
+    height: 100;
     .logo-wrapper {
       padding: 25px 40px;
     }
@@ -252,8 +252,8 @@
         p {
           padding-top: 5px;
           font-weight: 700;
-          font-size: 15px;
-          line-height: 20px;
+          font-size: 12px;
+          line-height: 15px;
         }
       }
 
@@ -280,7 +280,7 @@
       background: #fdfdff;
       .one {
         display: flex;
-        width: 40%;
+        width: 50%;
         justify-content: space-between;
       }
 
@@ -363,7 +363,8 @@
 
     .dashboard-body {
       width: 100%;
-      padding: 25px 0;
+      padding: 2% 0;
+      height: 100%;
       .top {
         display: flex;
         width: 100%;
@@ -438,7 +439,7 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-            padding: 25px 5%;
+            padding: 2% 5%;
             h3 {
               font-family: "Roboto", sans-serif;
               font-style: normal;
@@ -478,7 +479,7 @@
           // justify-content: center;
           // align-items: center;
           .heading {
-            padding-top: 25px;
+            padding-top: 2%;
             padding-left: 5%;
             h3 {
               font-family: "Roboto", sans-serif;
@@ -727,9 +728,7 @@
 <script>
 import PieChart from "@/components/PieChart.vue";
 import LineComponent from "@/components/LineComponent.vue";
-// import LineChart from '@/components/LineChart.vue';
-// import Pie from "../components/PieChart.vue";
-// import LineChart from "../components/LineChart.vue";
+
 export default {
   name: "App",
   data() {

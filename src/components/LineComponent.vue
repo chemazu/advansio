@@ -58,7 +58,7 @@ export default {
 @media screen and (max-width: 480px) {
   .line-chart {
     height: 250px;
-    width: 100%;
+    /* width: 100%; */
     /* display: flex;
 align-items: center; */
   }

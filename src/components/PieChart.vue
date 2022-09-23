@@ -87,7 +87,6 @@ export default {
               },
             },
             color: ["#FF9737", "#FFf"],
-          
           },
         ],
       },

@@ -164,16 +164,16 @@
 .dashboard {
   width: 100%;
   background-color: #e5e5e5;
-  height: 100%;
-  max-height: 100vh;
-  min-height: 100vh;
+  // height: 100%;
+  // max-height: 100vh;
+  // min-height: 100vh;
   overflow: hidden;
   display: flex;
   .left {
     width: 17.5%;
     background: #14142d;
     // border: 1px solid #ebebeb;
-    height: 100%;
+    height: 100;
     .logo-wrapper {
       padding: 25px 40px;
     }
@@ -199,8 +199,8 @@
         p {
           padding-top: 5px;
           font-weight: 700;
-          font-size: 15px;
-          line-height: 20px;
+          font-size: 12px;
+          line-height: 15px;
         }
         &:hover {
           cursor: pointer;
@@ -230,7 +230,7 @@
       background: #fdfdff;
       .one {
         display: flex;
-        width: 40%;
+        width: 50%;
         justify-content: space-between;
       }
 
