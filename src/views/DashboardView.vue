@@ -560,7 +560,7 @@
           background: #fdfdff;
           border: 1px solid #ebebeb;
           border-radius: 13px;
-          padding: 20px 30px;
+          padding: 15px 25px;
           font-size: 14px;
           line-height: 23px;
           height: 100%;
@@ -568,7 +568,7 @@
             cursor: pointer;
           }
           img {
-            width: 75px;
+            width: 25%;
           }
           .content {
             text-align: left;
@@ -598,8 +598,8 @@
             p {
               font-style: normal;
               font-weight: 700;
-              font-size: 16px;
-              line-height: 22px;
+              font-size: 12px;
+              line-height: 14px;
               color: #000000;
               opacity: 0.7;
             }
@@ -641,9 +641,10 @@
               }
               .amount {
                 font-style: normal;
-                font-weight: 700;
-                font-size: 15px;
-                line-height: 20px;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 1px;
                 text-align: right;
               }
             }
