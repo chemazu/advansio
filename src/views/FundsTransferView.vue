@@ -166,7 +166,7 @@
   background-color: #e5e5e5;
   // height: 100%;
   // max-height: 100vh;
-  // min-height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   .left {
@@ -314,7 +314,7 @@
       width: 100%;
       padding: 2.5%;
       padding-bottom: 0;
-      height: 100%;
+      height: 100vh;
 
       .funds-transfer {
         padding: 2% 5%;

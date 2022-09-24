@@ -219,7 +219,7 @@
 .dashboard {
   width: 100%;
   background-color: #e5e5e5;
-  // height: 100%;
+  min-height: 100vh;
   display: flex;
   font-family: "Roboto", sans-serif;
   .left {
